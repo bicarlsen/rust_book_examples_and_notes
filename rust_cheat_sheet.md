@@ -86,6 +86,19 @@
   + Inclusive end: `<start_index>..=<end_index>`
   + If `<start_index>` is excluded it is assumed to be 0.
   + If `<end_index>` is excluded it is assumed to be the length of the object.
++ **Collections**
+  + **Vector** stores a variable number of values.
+    + `let v: Vec<i32> = Vec::new();`
+    + All elements are of the same type.
+      + Can use an enum to group types.
+    + `elm: &<T> = v[ <index> ];`
+    + `elm: Option<&T> = v.get( <index> );`
+  + **String**
+  + **Hashmap** is a key-value store.
+    + Hashmaps take ownership of the variables used as keys and values.
+    + `insert` overwrites values if they exist.
+    + `entry` allows you to check if a key already exists in the hashmap.
+      + Retuns an `Entry` object that has the `or_insert` method on it.
 + Reference: `&<var>`.
   + Used to borrow values instead of take owenership.
   + Dereference: `*`
@@ -93,7 +106,7 @@
   + Have type `&str`
   + A string reference `&String` is equivalent to the slice of the whole string `&string[ .. ]`.
   + String literals have the types of string slices `&str`.
-
+      
 ### Structs + Enums
 
 + **Structs:**
@@ -131,19 +144,6 @@
 + `if let` acts like `match` with only one specified arm, ignoring the rest.
   + `if let <pattern> = <value expression> { ... }`
   + Can include an `else` statement.
-+ **Collections**
-  + **Vector** stores a variable number of values.
-    + `let v: Vec<i32> = Vec::new();`
-    + All elements are of the same type.
-      + Can use an enum to group types.
-    + `elm: &<T> = v[ <index> ];`
-    + `elm: Option<&T> = v.get( <index> );`
-  + **String**
-  + **Hashmap** is a key-value store.
-    + Hashmaps take ownership of the variables used as keys and values.
-    + `insert` overwrites values if they exist.
-    + `entry` allows you to check if a key already exists in the hashmap.
-      + Retuns an `Entry` object that has the `or_insert` method on it.
 
 ### Errors
 
